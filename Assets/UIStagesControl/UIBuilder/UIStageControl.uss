@@ -1,5 +1,4 @@
 .stage {
-    flex-grow: 0;
     width: auto;
     height: auto;
     max-width: none;
@@ -15,11 +14,7 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    -unity-font-definition: initial;
-    -unity-font: url('project://database/Assets/UIStagesControl/Fonts/ofont.ru_Arial.ttf?fileID=12800000&guid=167e643acb97c294486cd01325f97894&type=3#ofont.ru_Arial');
-    font-size: 36px;
     background-color: rgba(255, 255, 255, 0);
-    color: rgb(255, 255, 255);
     margin-top: 0;
     margin-right: 0;
     margin-bottom: 0;
@@ -31,40 +26,22 @@
     min-width: 60px;
 }
 
-.stageActive {
-    flex-grow: 1;
-    width: 60px;
-    height: 60px;
-    max-width: 60px;
-    max-height: 60px;
-    margin-left: 1px;
-    background-image: url('project://database/Assets/UIStagesControl/Sprites/ui_sample2select.png?fileID=21300000&guid=041c92e8f8846cd4d9a69850e3f055fc&type=3#ui_sample2select');
-    -unity-background-image-tint-color: rgb(255, 255, 255);
-    border-top-width: 0;
-    border-right-width: 0;
-    border-bottom-width: 0;
-    border-left-width: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    -unity-font-definition: initial;
-    -unity-font: url('project://database/Assets/UIStagesControl/Fonts/ofont.ru_Arial.ttf?fileID=12800000&guid=167e643acb97c294486cd01325f97894&type=3#ofont.ru_Arial');
-    font-size: 36px;
-    background-color: rgba(255, 255, 255, 0);
-    color: rgb(40, 118, 32);
+.stage0 {
+    background-image: url('project://database/Assets/UIStagesControl/Sprites/ui_sample2select1.png?fileID=21300000&guid=dee2c74557583b748b4e1abbd5f666cb&type=3#ui_sample2select1');
     margin-top: 0;
     margin-right: 0;
     margin-bottom: 0;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
+    margin-left: 0;
+    -unity-slice-scale: 2px;
+}
+
+.stageActive {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
 }
 
 .subStage {
     background-image: url('project://database/Assets/UIStagesControl/Sprites/ui_sample4.png?fileID=21300000&guid=4300bd958f675044aacc9d2338d94e6d&type=3#ui_sample4');
-    width: 60px;
+    width: 62px;
     height: 48px;
     align-self: flex-end;
     margin-top: 0;
@@ -84,7 +61,10 @@
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     flex-shrink: 0;
-    flex-grow: 1;
+    flex-grow: 0;
+    max-width: 62px;
+    max-height: 48px;
+    min-width: 60px;
 }
 
 .subStageActive {
@@ -92,9 +72,24 @@
 }
 
 .stageText {
-    flex-shrink: 0;
-    width: 60px;
+    width: auto;
     height: 60px;
+    font-size: 36px;
+    -unity-font: url('project://database/Assets/UIStagesControl/Fonts/ofont.ru_Arial.ttf?fileID=12800000&guid=167e643acb97c294486cd01325f97894&type=3#ofont.ru_Arial');
+    -unity-font-definition: initial;
+    -unity-text-align: middle-center;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    color: rgb(255, 255, 255);
+    max-width: none;
+    max-height: 60px;
+    min-width: 60px;
     margin-top: 0;
     margin-right: 0;
     margin-bottom: 0;
@@ -103,37 +98,21 @@
     padding-right: 0;
     padding-bottom: 0;
     padding-left: 0;
-    font-size: 36px;
-    -unity-font: url('project://database/Assets/UIStagesControl/Fonts/ofont.ru_Arial.ttf?fileID=12800000&guid=167e643acb97c294486cd01325f97894&type=3#ofont.ru_Arial');
-    -unity-font-definition: initial;
 }
 
 .stageTextActive {
-    flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    font-size: 36px;
-    -unity-font: url('project://database/Assets/UIStagesControl/Fonts/ofont.ru_Arial.ttf?fileID=12800000&guid=167e643acb97c294486cd01325f97894&type=3#ofont.ru_Arial');
-    -unity-font-definition: initial;
     color: rgb(40, 118, 32);
+    flex-grow: 0;
 }
 
 .subStageText {
     flex-shrink: 0;
-    width: 60px;
+    width: auto;
     height: 48px;
     margin-top: 0;
     margin-right: 0;
     margin-bottom: 0;
-    margin-left: 0;
+    margin-left: 1px;
     padding-top: 0;
     padding-right: 0;
     padding-bottom: 0;
@@ -144,33 +123,42 @@
     -unity-font-style: bold;
     -unity-text-align: middle-center;
     white-space: nowrap;
-    justify-content: flex-start;
-    align-self: auto;
+    justify-content: space-around;
     align-items: center;
+    color: rgb(255, 255, 255);
 }
 
 .subStageTextActive {
-    flex-shrink: 0;
-    width: 60px;
-    height: 48px;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    font-size: 24px;
-    -unity-font: url('project://database/Assets/UIStagesControl/Fonts/ofont.ru_Arial.ttf?fileID=12800000&guid=167e643acb97c294486cd01325f97894&type=3#ofont.ru_Arial');
-    -unity-font-definition: initial;
-    -unity-font-style: bold;
-    -unity-text-align: middle-center;
-    white-space: nowrap;
+    color: rgb(40, 118, 32);
 }
 
 #InfoButton {
     -unity-background-image-tint-color: rgba(255, 255, 255, 0.63);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    -unity-slice-scale: 2px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 62px;
+    height: 60px;
+    align-self: flex-start;
+    top: -13px;
+    background-image: url('project://database/Assets/UIStagesControl/Sprites/ui_infoButtonIcon.png?fileID=21300000&guid=c34c0847ffaab9741a48f7ef3021734f&type=3#ui_infoButtonIcon');
+    max-width: 62px;
+    min-width: 62px;
+}
+
+#InfoButton.InfoButtonNormal {
+    background-image: url('project://database/Assets/UIStagesControl/Sprites/ui_infoButtonIcon2.png?fileID=21300000&guid=a9cf30248091f2b47bc62cc723f398b0&type=3#ui_infoButtonIcon2');
 }
 
 #InfoButton:hover {

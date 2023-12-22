@@ -11,35 +11,17 @@ public class UIInfoButton2 : BindButton
 {
     public Sprite origin;
     public Sprite normal;
-    public bool isOpen
-    {
-        set
-        {
-            _uiRoot.IsDisplayStage = value;
-            _uiRoot.IsDisplayStep = value;
-        }
-        get => _uiRoot.IsDisplayStage;
-    }
-
-    [Inject] private UIRoot _uiRoot;
-    private void Awake()
-    {
-        _uiRoot.IsDisplayStage = isOpen;
-        _uiRoot.IsDisplayStep = isOpen;
-
-        _uiRoot.BtnInfo.clicked += () =>
-        {
-            isOpen = !isOpen;
-            Redraw();
-        };
-    }
-
-    private void Redraw()
-    {
-        _uiRoot.BtnInfoBackground = new StyleBackground(isOpen ? origin : normal);
-        
-        _uiRoot.IsBtnInfoArrowUp = isOpen;
-    }
+    // public bool isOpen
+    // {
+    //     set
+    //     {
+    //         _uiRoot.IsDisplayStageInfo = value;
+    //         _uiRoot.IsDisplayStep = value;
+    //     }
+    //     get => _uiRoot.IsDisplayStageInfo;
+    // }
+    
+    
 }
 
 #if(UNITY_EDITOR)

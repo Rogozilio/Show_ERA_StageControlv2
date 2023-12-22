@@ -244,53 +244,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141126926}
   m_CullTransparentMesh: 1
---- !u!1 &164751147
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 164751148}
-  - component: {fileID: 164751149}
-  m_Layer: 5
-  m_Name: InfoButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &164751148
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164751147}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1645429589}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &164751149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164751147}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3e02a6ab4a64608b2dcb515f60252eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: SwitchStage
-  origin: {fileID: 21300000, guid: c34c0847ffaab9741a48f7ef3021734f, type: 3}
-  normal: {fileID: 21300000, guid: a9cf30248091f2b47bc62cc723f398b0, type: 3}
 --- !u!1001 &335371704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1813,8 +1766,7 @@ Transform:
   m_LocalPosition: {x: -6.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 164751148}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1645429590
@@ -1879,9 +1831,93 @@ MonoBehaviour:
       isUseRestartButton: 0
       isShowStage: 0
       isShowSteps: 0
+    - index: 0
+      numberStage: 
+      nameStage: 
+      helpMassageData: []
+      action:
+        m_PersistentCalls:
+          m_Calls: []
+      isDisabled: 0
+      isUseRestartButton: 0
+      isShowStage: 0
+      isShowSteps: 0
+  - stage:
+      index: 0
+      numberStage: 
+      nameStage: 
+      helpMassageData: []
+      action:
+        m_PersistentCalls:
+          m_Calls: []
+      isDisabled: 1
+      isUseRestartButton: 0
+      isShowStage: 0
+      isShowSteps: 0
+    subStages:
+    - index: 0
+      numberStage: 
+      nameStage: 
+      helpMassageData: []
+      action:
+        m_PersistentCalls:
+          m_Calls: []
+      isDisabled: 0
+      isUseRestartButton: 0
+      isShowStage: 0
+      isShowSteps: 0
+    - index: 0
+      numberStage: 
+      nameStage: 
+      helpMassageData: []
+      action:
+        m_PersistentCalls:
+          m_Calls: []
+      isDisabled: 0
+      isUseRestartButton: 0
+      isShowStage: 0
+      isShowSteps: 0
+  - stage:
+      index: 0
+      numberStage: 
+      nameStage: 
+      helpMassageData: []
+      action:
+        m_PersistentCalls:
+          m_Calls: []
+      isDisabled: 1
+      isUseRestartButton: 0
+      isShowStage: 0
+      isShowSteps: 0
+    subStages:
+    - index: 0
+      numberStage: 
+      nameStage: 
+      helpMassageData: []
+      action:
+        m_PersistentCalls:
+          m_Calls: []
+      isDisabled: 0
+      isUseRestartButton: 0
+      isShowStage: 0
+      isShowSteps: 0
+  - stage:
+      index: 0
+      numberStage: 
+      nameStage: 
+      helpMassageData: []
+      action:
+        m_PersistentCalls:
+          m_Calls: []
+      isDisabled: 1
+      isUseRestartButton: 0
+      isShowStage: 0
+      isShowSteps: 0
+    subStages: []
   _onRestartButton:
     m_PersistentCalls:
       m_Calls: []
+  isOpenStageInfo: 1
 --- !u!1 &1768618848
 GameObject:
   m_ObjectHideFlags: 0

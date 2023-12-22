@@ -47,12 +47,13 @@ public class UIStageControl2 : MonoBehaviour
 
     public List<StageData> stages;
     [SerializeField] private UnityEvent _onRestartButton;
+    public bool isOpenStageInfo;
 
     private void Awake()
     {
         InitUIStages();
-        
-        _uiRoot.ActivateStage(0);
+
+        _uiRoot.ActivateStageByIndex(0);
     }
 
     private void InitUIStages()
@@ -66,6 +67,8 @@ public class UIStageControl2 : MonoBehaviour
                 _uiRoot.AddSubStage(i);
             }
         }
+
+        _uiRoot.SetInfoButton(isOpenStageInfo);
     }
 }
 
@@ -85,7 +88,7 @@ public class UIStagesControl2Editor : Editor
     private SerializedProperty _propertyNameLab;
     private SerializedProperty _propertyStages;
     private SerializedProperty _propertyRestartButton;
-    private SerializedProperty _propertyShowHideInfoButton;
+    private SerializedProperty _propertyIsOpenStageInfo;
 
     private ItemStageControl _itemStageControl;
 
@@ -111,7 +114,7 @@ public class UIStagesControl2Editor : Editor
         _propertyNameLab = serializedObject.FindProperty("nameLab");
         _propertyStages = serializedObject.FindProperty("stages");
         _propertyRestartButton = serializedObject.FindProperty("_onRestartButton");
-        _propertyShowHideInfoButton = serializedObject.FindProperty("showHideInfoButton");
+        _propertyIsOpenStageInfo = serializedObject.FindProperty("isOpenStageInfo");
 
         _openShowHideInfoButton = Resources.Load("OpenShowHideInfoButton") as Texture2D;
         _closeShowHideInfoButton = Resources.Load("CloseShowHideInfoButton") as Texture2D;
@@ -142,7 +145,7 @@ public class UIStagesControl2Editor : Editor
         GUILayout.Space(1);
         DrawRestartButton();
         GUILayout.Space(1);
-        //DrawShowHideInfoButton();
+        DrawShowHideInfoButton();
     }
 
     private void DrawButtonNameLab()
@@ -245,23 +248,23 @@ public class UIStagesControl2Editor : Editor
 
     private void DrawShowHideInfoButton()
     {
-        var propertyShowHideInfoButton = new SerializedObject(_propertyShowHideInfoButton.objectReferenceValue);
-        var isOpen = propertyShowHideInfoButton.FindProperty("isOpen").boolValue;
+        var isOpen = _propertyIsOpenStageInfo.boolValue;
         var spriteShowHideInfoButton = isOpen ? _openShowHideInfoButton : _closeShowHideInfoButton;
         GUI.backgroundColor = Color.green;
+        EditorGUILayout.BeginHorizontal();
         if (GUILayout.Button(spriteShowHideInfoButton, GUIStyle.none, _sizeStageButton))
         {
-            propertyShowHideInfoButton.FindProperty("isOpen").boolValue = !isOpen;
-            propertyShowHideInfoButton.ApplyModifiedProperties();
-            var obj = _propertyShowHideInfoButton.objectReferenceValue as UIInfoButton;
-            obj.Awake();
-            obj.SwitchStage();
-            var uiStagesControl = (UIStagesControl)target;
-            uiStagesControl.stageInfo.SetActive(!isOpen);
-            uiStagesControl.helpMessages.SetActive(!isOpen);
+            _propertyIsOpenStageInfo.boolValue = !isOpen;
         }
 
-        GUILayout.FlexibleSpace();
+        EditorGUILayout.BeginVertical();
+        EditorGUILayout.Space(3);
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField(" = IsOpen -> ", GUILayout.Width(70));
+        EditorGUILayout.LabelField(isOpen.ToString());
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.EndVertical();
+        EditorGUILayout.EndHorizontal();
         GUI.backgroundColor = Color.white;
     }
 
@@ -356,10 +359,11 @@ public class UIStagesControl2Editor : Editor
             stage = _propertyStages.GetArrayElementAtIndex(_indexSelectStage).FindPropertyRelative("subStages")
                 .GetArrayElementAtIndex(_indexSelectSubStage);
         }
-        
+
         var stageName = _itemStageControl == ItemStageControl.StageButton
             ? stage.FindPropertyRelative("nameStage").stringValue
-            : _uiStageControl.stages[_indexSelectStage].stage.nameStage + " " + stage.FindPropertyRelative("nameStage").stringValue;
+            : _uiStageControl.stages[_indexSelectStage].stage.nameStage + " " +
+              stage.FindPropertyRelative("nameStage").stringValue;
         EditorGUILayout.LabelField(stageName + " options: ");
         EditorGUI.indentLevel++;
         EditorGUILayout.PropertyField(stage.FindPropertyRelative("isDisabled"));
